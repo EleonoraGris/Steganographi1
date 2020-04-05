@@ -6940,11 +6940,6 @@
         8+JN9MGSJPl/cxhb4ZrH3IEAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="textBox1.Text" xml:space="preserve">
-    <value>Что бы закодировать сообщение в изображение, выберите изображение, которое вы хотите использовать, введите свой текст и нажмите кнопку Кодировать.
-Помните, что чем больше текста вы хотите скрыть, тем больше должно быть изображение. В случае, если вы выбрали изображение, которое являеся слишком маленьким, вы будете проинформированы.
-</value>
-  </data>
   <data name="pictureBoxImageLoad.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0CAYAAADL1t+KAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
