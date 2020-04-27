@@ -31,29 +31,35 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Steganography));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.buttonRestart = new System.Windows.Forms.Button();
+            this.buttonSaveImage = new System.Windows.Forms.Button();
             this.pictureBoxPixel = new System.Windows.Forms.PictureBox();
             this.pictureBoxImageRixel = new System.Windows.Forms.PictureBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.pictureBoxImage = new System.Windows.Forms.PictureBox();
             this.textBoxCode = new System.Windows.Forms.TextBox();
-            this.buttonCod = new System.Windows.Forms.Button();
+            this.buttonCode = new System.Windows.Forms.Button();
             this.buttonUpload = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.buttonLoadProcessImage = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxSourceImage = new System.Windows.Forms.PictureBox();
+            this.pictureBoxProcessImage = new System.Windows.Forms.PictureBox();
+            this.buttonSaveMassage = new System.Windows.Forms.Button();
             this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.pictureBoxImageLoad = new System.Windows.Forms.PictureBox();
+            this.textBoxDecode = new System.Windows.Forms.TextBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.buttonUpload2 = new System.Windows.Forms.Button();
+            this.buttonLoadSourceImage = new System.Windows.Forms.Button();
             this.buttonDecode = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.textBoxBinCode = new System.Windows.Forms.TextBox();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.buttonSaveImage = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.buttonSaveMassage = new System.Windows.Forms.Button();
             this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPixel)).BeginInit();
@@ -61,8 +67,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImageLoad)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSourceImage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProcessImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.tabPage4.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -83,13 +92,14 @@
             // 
             this.tabPage1.BackColor = System.Drawing.Color.DarkGray;
             this.tabPage1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tabPage1.Controls.Add(this.buttonRestart);
             this.tabPage1.Controls.Add(this.buttonSaveImage);
             this.tabPage1.Controls.Add(this.pictureBoxPixel);
             this.tabPage1.Controls.Add(this.pictureBoxImageRixel);
             this.tabPage1.Controls.Add(this.textBox2);
             this.tabPage1.Controls.Add(this.pictureBoxImage);
             this.tabPage1.Controls.Add(this.textBoxCode);
-            this.tabPage1.Controls.Add(this.buttonCod);
+            this.tabPage1.Controls.Add(this.buttonCode);
             this.tabPage1.Controls.Add(this.buttonUpload);
             this.tabPage1.Controls.Add(this.pictureBox1);
             this.tabPage1.ForeColor = System.Drawing.Color.Black;
@@ -99,6 +109,28 @@
             this.tabPage1.Size = new System.Drawing.Size(792, 521);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "ЗАШИФРОВАТЬ";
+            // 
+            // buttonRestart
+            // 
+            this.buttonRestart.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonRestart.Location = new System.Drawing.Point(283, 82);
+            this.buttonRestart.Name = "buttonRestart";
+            this.buttonRestart.Size = new System.Drawing.Size(198, 42);
+            this.buttonRestart.TabIndex = 10;
+            this.buttonRestart.Text = "Начать сначала";
+            this.buttonRestart.UseVisualStyleBackColor = true;
+            this.buttonRestart.Click += new System.EventHandler(this.buttonRestart_Click);
+            // 
+            // buttonSaveImage
+            // 
+            this.buttonSaveImage.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonSaveImage.Location = new System.Drawing.Point(500, 82);
+            this.buttonSaveImage.Name = "buttonSaveImage";
+            this.buttonSaveImage.Size = new System.Drawing.Size(282, 42);
+            this.buttonSaveImage.TabIndex = 9;
+            this.buttonSaveImage.Text = "Сохранить изображение";
+            this.buttonSaveImage.UseVisualStyleBackColor = true;
+            this.buttonSaveImage.Click += new System.EventHandler(this.buttonSaveImage_Click);
             // 
             // pictureBoxPixel
             // 
@@ -149,15 +181,16 @@
             this.textBoxCode.TabIndex = 4;
             this.textBoxCode.Text = "Введите свой текст здесь";
             // 
-            // buttonCod
+            // buttonCode
             // 
-            this.buttonCod.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonCod.Location = new System.Drawing.Point(6, 41);
-            this.buttonCod.Name = "buttonCod";
-            this.buttonCod.Size = new System.Drawing.Size(271, 35);
-            this.buttonCod.TabIndex = 3;
-            this.buttonCod.Text = "Кодировать";
-            this.buttonCod.UseVisualStyleBackColor = true;
+            this.buttonCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonCode.Location = new System.Drawing.Point(6, 41);
+            this.buttonCode.Name = "buttonCode";
+            this.buttonCode.Size = new System.Drawing.Size(271, 35);
+            this.buttonCode.TabIndex = 3;
+            this.buttonCode.Text = "Кодировать";
+            this.buttonCode.UseVisualStyleBackColor = true;
+            this.buttonCode.Click += new System.EventHandler(this.buttonCode_Click);
             // 
             // buttonUpload
             // 
@@ -183,12 +216,15 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.DarkGray;
+            this.tabPage2.Controls.Add(this.buttonLoadProcessImage);
+            this.tabPage2.Controls.Add(this.pictureBox2);
+            this.tabPage2.Controls.Add(this.pictureBoxSourceImage);
+            this.tabPage2.Controls.Add(this.pictureBoxProcessImage);
             this.tabPage2.Controls.Add(this.buttonSaveMassage);
             this.tabPage2.Controls.Add(this.textBox5);
-            this.tabPage2.Controls.Add(this.textBox4);
-            this.tabPage2.Controls.Add(this.pictureBoxImageLoad);
+            this.tabPage2.Controls.Add(this.textBoxDecode);
             this.tabPage2.Controls.Add(this.pictureBox3);
-            this.tabPage2.Controls.Add(this.buttonUpload2);
+            this.tabPage2.Controls.Add(this.buttonLoadSourceImage);
             this.tabPage2.Controls.Add(this.buttonDecode);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
@@ -197,64 +233,105 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "РАСШИФРОВАТЬ";
             // 
+            // buttonLoadProcessImage
+            // 
+            this.buttonLoadProcessImage.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonLoadProcessImage.Location = new System.Drawing.Point(44, 69);
+            this.buttonLoadProcessImage.Name = "buttonLoadProcessImage";
+            this.buttonLoadProcessImage.Size = new System.Drawing.Size(235, 54);
+            this.buttonLoadProcessImage.TabIndex = 12;
+            this.buttonLoadProcessImage.Text = "Загрузить обработанное изображение";
+            this.buttonLoadProcessImage.UseVisualStyleBackColor = true;
+            this.buttonLoadProcessImage.Click += new System.EventHandler(this.buttonLoadProcessImage_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(8, 82);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 11;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBoxSourceImage
+            // 
+            this.pictureBoxSourceImage.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSourceImage.Image")));
+            this.pictureBoxSourceImage.Location = new System.Drawing.Point(8, 153);
+            this.pictureBoxSourceImage.Name = "pictureBoxSourceImage";
+            this.pictureBoxSourceImage.Size = new System.Drawing.Size(360, 360);
+            this.pictureBoxSourceImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxSourceImage.TabIndex = 10;
+            this.pictureBoxSourceImage.TabStop = false;
+            // 
+            // pictureBoxProcessImage
+            // 
+            this.pictureBoxProcessImage.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxProcessImage.Image")));
+            this.pictureBoxProcessImage.Location = new System.Drawing.Point(424, 153);
+            this.pictureBoxProcessImage.Name = "pictureBoxProcessImage";
+            this.pictureBoxProcessImage.Size = new System.Drawing.Size(360, 360);
+            this.pictureBoxProcessImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxProcessImage.TabIndex = 9;
+            this.pictureBoxProcessImage.TabStop = false;
+            // 
+            // buttonSaveMassage
+            // 
+            this.buttonSaveMassage.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonSaveMassage.Location = new System.Drawing.Point(519, 82);
+            this.buttonSaveMassage.Name = "buttonSaveMassage";
+            this.buttonSaveMassage.Size = new System.Drawing.Size(264, 41);
+            this.buttonSaveMassage.TabIndex = 8;
+            this.buttonSaveMassage.Text = "Сохранить сообщение";
+            this.buttonSaveMassage.UseVisualStyleBackColor = true;
+            // 
             // textBox5
             // 
             this.textBox5.BackColor = System.Drawing.Color.DarkGray;
             this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox5.Location = new System.Drawing.Point(72, 118);
+            this.textBox5.Location = new System.Drawing.Point(8, 134);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(100, 13);
             this.textBox5.TabIndex = 7;
             this.textBox5.Text = "Вы загрузили:";
             // 
-            // textBox4
+            // textBoxDecode
             // 
-            this.textBox4.ForeColor = System.Drawing.Color.DarkGray;
-            this.textBox4.Location = new System.Drawing.Point(285, 6);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(498, 70);
-            this.textBox4.TabIndex = 2;
-            this.textBox4.Text = "Ваше сообщение появится здесь";
-            // 
-            // pictureBoxImageLoad
-            // 
-            this.pictureBoxImageLoad.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxImageLoad.Image")));
-            this.pictureBoxImageLoad.Location = new System.Drawing.Point(72, 137);
-            this.pictureBoxImageLoad.Name = "pictureBoxImageLoad";
-            this.pictureBoxImageLoad.Size = new System.Drawing.Size(639, 381);
-            this.pictureBoxImageLoad.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxImageLoad.TabIndex = 3;
-            this.pictureBoxImageLoad.TabStop = false;
+            this.textBoxDecode.ForeColor = System.Drawing.Color.DarkGray;
+            this.textBoxDecode.Location = new System.Drawing.Point(285, 6);
+            this.textBoxDecode.Multiline = true;
+            this.textBoxDecode.Name = "textBoxDecode";
+            this.textBoxDecode.ReadOnly = true;
+            this.textBoxDecode.Size = new System.Drawing.Size(498, 70);
+            this.textBoxDecode.TabIndex = 2;
+            this.textBoxDecode.Text = "Ваше сообщение появится здесь";
             // 
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(8, 6);
+            this.pictureBox3.Location = new System.Drawing.Point(8, 17);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(30, 30);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 4;
             this.pictureBox3.TabStop = false;
             // 
-            // buttonUpload2
+            // buttonLoadSourceImage
             // 
-            this.buttonUpload2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonUpload2.Location = new System.Drawing.Point(44, 6);
-            this.buttonUpload2.Name = "buttonUpload2";
-            this.buttonUpload2.Size = new System.Drawing.Size(235, 30);
-            this.buttonUpload2.TabIndex = 5;
-            this.buttonUpload2.Text = "Загрузить изображение";
-            this.buttonUpload2.UseVisualStyleBackColor = true;
-            this.buttonUpload2.Click += new System.EventHandler(this.buttonUpload2_Click);
+            this.buttonLoadSourceImage.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonLoadSourceImage.Location = new System.Drawing.Point(44, 6);
+            this.buttonLoadSourceImage.Name = "buttonLoadSourceImage";
+            this.buttonLoadSourceImage.Size = new System.Drawing.Size(235, 54);
+            this.buttonLoadSourceImage.TabIndex = 5;
+            this.buttonLoadSourceImage.Text = "Загрузить исходное изображение";
+            this.buttonLoadSourceImage.UseVisualStyleBackColor = true;
+            this.buttonLoadSourceImage.Click += new System.EventHandler(this.buttonLoadSourceImage_Click);
             // 
             // buttonDecode
             // 
             this.buttonDecode.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonDecode.Location = new System.Drawing.Point(8, 42);
+            this.buttonDecode.Location = new System.Drawing.Point(285, 82);
             this.buttonDecode.Name = "buttonDecode";
-            this.buttonDecode.Size = new System.Drawing.Size(271, 35);
+            this.buttonDecode.Size = new System.Drawing.Size(228, 41);
             this.buttonDecode.TabIndex = 6;
             this.buttonDecode.Text = "Декодировать";
             this.buttonDecode.UseVisualStyleBackColor = true;
@@ -262,12 +339,38 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.BackColor = System.Drawing.Color.DarkGray;
+            this.tabPage4.Controls.Add(this.textBox8);
+            this.tabPage4.Controls.Add(this.textBoxBinCode);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Size = new System.Drawing.Size(792, 521);
             this.tabPage4.TabIndex = 2;
             this.tabPage4.Text = "ДЕМОНСТРАЦИЯ";
-            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // textBox8
+            // 
+            this.textBox8.BackColor = System.Drawing.Color.DarkGray;
+            this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox8.Location = new System.Drawing.Point(3, 42);
+            this.textBox8.Multiline = true;
+            this.textBox8.Name = "textBox8";
+            this.textBox8.ReadOnly = true;
+            this.textBox8.Size = new System.Drawing.Size(199, 37);
+            this.textBox8.TabIndex = 1;
+            this.textBox8.Text = "Ваше сообщение в двоичном представление: ";
+            // 
+            // textBoxBinCode
+            // 
+            this.textBoxBinCode.BackColor = System.Drawing.Color.DarkGray;
+            this.textBoxBinCode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxBinCode.Location = new System.Drawing.Point(208, 3);
+            this.textBoxBinCode.Multiline = true;
+            this.textBoxBinCode.Name = "textBoxBinCode";
+            this.textBoxBinCode.ReadOnly = true;
+            this.textBoxBinCode.Size = new System.Drawing.Size(576, 129);
+            this.textBoxBinCode.TabIndex = 0;
             // 
             // tabPage5
             // 
@@ -282,41 +385,18 @@
             this.tabPage5.TabIndex = 3;
             this.tabPage5.Text = "СПРАВКА";
             // 
-            // textBox6
+            // textBox3
             // 
-            this.textBox6.BackColor = System.Drawing.Color.Gray;
-            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox6.Location = new System.Drawing.Point(3, 3);
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(781, 59);
-            this.textBox6.TabIndex = 0;
-            this.textBox6.Text = "1. Чтобы закодировать сообщение в изображение, выберите изображение, которое вы х" +
-    "отите использовать, введите свой текст и нажмите кнопку Кодировать.";
-            // 
-            // buttonSaveImage
-            // 
-            this.buttonSaveImage.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonSaveImage.Location = new System.Drawing.Point(500, 82);
-            this.buttonSaveImage.Name = "buttonSaveImage";
-            this.buttonSaveImage.Size = new System.Drawing.Size(282, 42);
-            this.buttonSaveImage.TabIndex = 9;
-            this.buttonSaveImage.Text = "Сохранить изображение";
-            this.buttonSaveImage.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.Gray;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox1.Location = new System.Drawing.Point(3, 133);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(781, 59);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.Text = "3. Чтобы декодировать скрытое сообщение с изображения, просто выберите изображени" +
-    "е и нажмите кнопку Декодировать";
+            this.textBox3.BackColor = System.Drawing.Color.Gray;
+            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox3.Location = new System.Drawing.Point(3, 198);
+            this.textBox3.Multiline = true;
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(781, 59);
+            this.textBox3.TabIndex = 3;
+            this.textBox3.Text = "4. Если вы хотите сохранить сообщение из загруженного изображения нажмите кнопку " +
+    "Сохранить сообщение.\r\n";
             // 
             // textBox7
             // 
@@ -331,28 +411,31 @@
             this.textBox7.Text = "2. Если вы хотите сохранить изображение с зашифрованным сообщением нажмите кнопку" +
     " Сохранить изображение.";
             // 
-            // buttonSaveMassage
+            // textBox1
             // 
-            this.buttonSaveMassage.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonSaveMassage.Location = new System.Drawing.Point(512, 82);
-            this.buttonSaveMassage.Name = "buttonSaveMassage";
-            this.buttonSaveMassage.Size = new System.Drawing.Size(271, 35);
-            this.buttonSaveMassage.TabIndex = 8;
-            this.buttonSaveMassage.Text = "Сохранить сообщение";
-            this.buttonSaveMassage.UseVisualStyleBackColor = true;
+            this.textBox1.BackColor = System.Drawing.Color.Gray;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox1.Location = new System.Drawing.Point(3, 133);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(781, 59);
+            this.textBox1.TabIndex = 1;
+            this.textBox1.Text = "3. Чтобы декодировать скрытое сообщение с изображения, просто выберите изображени" +
+    "е и нажмите кнопку Декодировать";
             // 
-            // textBox3
+            // textBox6
             // 
-            this.textBox3.BackColor = System.Drawing.Color.Gray;
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox3.Location = new System.Drawing.Point(3, 198);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(781, 59);
-            this.textBox3.TabIndex = 3;
-            this.textBox3.Text = "4. Если вы хотите сохранить сообщение из загруженного изображения нажмите кнопку " +
-    "Сохранить сообщение.\r\n";
+            this.textBox6.BackColor = System.Drawing.Color.Gray;
+            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox6.Location = new System.Drawing.Point(3, 3);
+            this.textBox6.Multiline = true;
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(781, 59);
+            this.textBox6.TabIndex = 0;
+            this.textBox6.Text = "1. Чтобы закодировать сообщение в изображение, выберите изображение, которое вы х" +
+    "отите использовать, введите свой текст и нажмите кнопку Кодировать.";
             // 
             // Steganography
             // 
@@ -371,8 +454,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImageLoad)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSourceImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProcessImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
             this.ResumeLayout(false);
@@ -384,7 +471,7 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TextBox textBoxCode;
-        private System.Windows.Forms.Button buttonCod;
+        private System.Windows.Forms.Button buttonCode;
         private System.Windows.Forms.Button buttonUpload;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TabPage tabPage2;
@@ -392,10 +479,9 @@
         private System.Windows.Forms.PictureBox pictureBoxImage;
         private System.Windows.Forms.PictureBox pictureBoxImageRixel;
         private System.Windows.Forms.PictureBox pictureBoxPixel;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.PictureBox pictureBoxImageLoad;
+        private System.Windows.Forms.TextBox textBoxDecode;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Button buttonUpload2;
+        private System.Windows.Forms.Button buttonLoadSourceImage;
         private System.Windows.Forms.Button buttonDecode;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TabPage tabPage4;
@@ -406,6 +492,13 @@
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Button buttonSaveMassage;
         private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox textBoxBinCode;
+        private System.Windows.Forms.Button buttonRestart;
+        private System.Windows.Forms.PictureBox pictureBoxProcessImage;
+        private System.Windows.Forms.PictureBox pictureBoxSourceImage;
+        private System.Windows.Forms.Button buttonLoadProcessImage;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
 
