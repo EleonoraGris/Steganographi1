@@ -100,13 +100,15 @@ namespace Steganographi1
                     else
                     {
                         i = pictureBoxImage.Width;
-                        break;
+                       break;
                     }
                 }
             if (pictureBoxImage.Image != null) pictureBoxImage.Image.Dispose();
             pictureBoxImage.Image = b.Clone(new Rectangle(0, 0, b.Width, b.Height), System.Drawing.Imaging.PixelFormat.DontCare);
+            
             b.Dispose();
             pictureBoxImageRixel.Image = (Bitmap)pictureBoxImage.Image.Clone();
+            
         }
 
         private void buttonSaveImage_Click(object sender, EventArgs e)
@@ -123,7 +125,7 @@ namespace Steganographi1
                 {
                     try
                     {
-                        pictureBoxImageRixel.Image.Save(savedialog.FileName, System.Drawing.Imaging.ImageFormat.Jpeg);
+                        pictureBoxImageRixel.Image.Save(savedialog.FileName, System.Drawing.Imaging.ImageFormat.Bmp);
                     }
                     catch
                     {
@@ -144,12 +146,34 @@ namespace Steganographi1
             textBoxDecode.Clear();
             string binTextDecode = "";
             ConvertPixelToBinText(ref binTextDecode);
+            string text = "";
+            ConvertBinTextToStringText(binTextDecode, ref text);
 
         }
+
+
+        public void ConvertBinTextToStringText(string binTextDecode, ref string text)
+        {
+            int oneSymbol = 0;
+            for (int i = 0; i < binTextDecode.Length; i += 11)
+            {
+                for (int j = 0; j < 11; j++)
+                {
+                    if (binTextDecode[i + j] == '1')
+                        oneSymbol += Convert.ToInt32(Math.Pow(2, 10 - j));
+                }
+                char symbol = Convert.ToChar(oneSymbol);
+                text += Convert.ToString(symbol);
+                oneSymbol = 0;
+            }
+                textBoxDecode.Text = text;
+        }
+
 
         public void ConvertPixelToBinText(ref string binTextDecode)
         {
             int count = 0;
+
             do
             {
                 Bitmap b1 = new Bitmap(pictureBoxSourceImage.ClientSize.Width, pictureBoxSourceImage.Height);
@@ -162,15 +186,14 @@ namespace Steganographi1
                     for (int j = 0; j < pictureBoxSourceImage.ClientSize.Height; j++)
                     {
                         int R1 = b1.GetPixel(i, j).R;
-                        MessageBox.Show(R1 + "");
                         int R2 = b2.GetPixel(i, j).R;
-                        MessageBox.Show(R2 + "");
                         count = R2 - R1;
 
                         if (count == 1) binTextDecode += 0;
                         if (count == 2) binTextDecode += 1;
-                        if (count == 0) 
+                        if (count == 0 && i==0 && j==0) 
                         {
+
                             MessageBox.Show("Вы загузили одинаковые изображения");
                             i = pictureBoxSourceImage.Width;
                             break;
@@ -186,6 +209,11 @@ namespace Steganographi1
             }
             while (count == 1 || count == 2);
             textBoxDecode.Text = binTextDecode;
+        }
+
+        private void buttonSaveMassage_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

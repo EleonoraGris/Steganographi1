@@ -283,6 +283,7 @@
             this.buttonSaveMassage.TabIndex = 8;
             this.buttonSaveMassage.Text = "Сохранить сообщение";
             this.buttonSaveMassage.UseVisualStyleBackColor = true;
+            this.buttonSaveMassage.Click += new System.EventHandler(this.buttonSaveMassage_Click);
             // 
             // textBox5
             // 
