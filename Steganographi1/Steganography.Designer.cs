@@ -60,6 +60,7 @@
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPixel)).BeginInit();
@@ -376,6 +377,7 @@
             // tabPage5
             // 
             this.tabPage5.BackColor = System.Drawing.Color.Gray;
+            this.tabPage5.Controls.Add(this.textBox4);
             this.tabPage5.Controls.Add(this.textBox3);
             this.tabPage5.Controls.Add(this.textBox7);
             this.tabPage5.Controls.Add(this.textBox1);
@@ -391,12 +393,12 @@
             this.textBox3.BackColor = System.Drawing.Color.Gray;
             this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox3.Location = new System.Drawing.Point(3, 198);
+            this.textBox3.Location = new System.Drawing.Point(3, 364);
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(781, 59);
             this.textBox3.TabIndex = 3;
-            this.textBox3.Text = "4. Если вы хотите сохранить сообщение из загруженного изображения нажмите кнопку " +
+            this.textBox3.Text = "5. Если вы хотите сохранить сообщение из загруженного изображения нажмите кнопку " +
     "Сохранить сообщение.\r\n";
             // 
             // textBox7
@@ -404,12 +406,12 @@
             this.textBox7.BackColor = System.Drawing.Color.Gray;
             this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox7.Location = new System.Drawing.Point(3, 68);
+            this.textBox7.Location = new System.Drawing.Point(3, 234);
             this.textBox7.Multiline = true;
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(781, 59);
             this.textBox7.TabIndex = 2;
-            this.textBox7.Text = "2. Если вы хотите сохранить изображение с зашифрованным сообщением нажмите кнопку" +
+            this.textBox7.Text = "3. Если вы хотите сохранить изображение с зашифрованным сообщением нажмите кнопку" +
     " Сохранить изображение.";
             // 
             // textBox1
@@ -417,12 +419,12 @@
             this.textBox1.BackColor = System.Drawing.Color.Gray;
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox1.Location = new System.Drawing.Point(3, 133);
+            this.textBox1.Location = new System.Drawing.Point(3, 299);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(781, 59);
             this.textBox1.TabIndex = 1;
-            this.textBox1.Text = "3. Чтобы декодировать скрытое сообщение с изображения, просто выберите изображени" +
+            this.textBox1.Text = "4. Чтобы декодировать скрытое сообщение с изображения, просто выберите изображени" +
     "е и нажмите кнопку Декодировать";
             // 
             // textBox6
@@ -430,13 +432,25 @@
             this.textBox6.BackColor = System.Drawing.Color.Gray;
             this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox6.Location = new System.Drawing.Point(3, 3);
+            this.textBox6.Location = new System.Drawing.Point(3, 169);
             this.textBox6.Multiline = true;
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(781, 59);
             this.textBox6.TabIndex = 0;
-            this.textBox6.Text = "1. Чтобы закодировать сообщение в изображение, выберите изображение, которое вы х" +
+            this.textBox6.Text = "2. Чтобы закодировать сообщение в изображение, выберите изображение, которое вы х" +
     "отите использовать, введите свой текст и нажмите кнопку Кодировать.";
+            // 
+            // textBox4
+            // 
+            this.textBox4.BackColor = System.Drawing.Color.Gray;
+            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox4.Location = new System.Drawing.Point(3, 13);
+            this.textBox4.Multiline = true;
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(781, 150);
+            this.textBox4.TabIndex = 4;
+            this.textBox4.Text = resources.GetString("textBox4.Text");
             // 
             // Steganography
             // 
@@ -500,6 +514,7 @@
         private System.Windows.Forms.PictureBox pictureBoxSourceImage;
         private System.Windows.Forms.Button buttonLoadProcessImage;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.TextBox textBox4;
     }
 }
 
